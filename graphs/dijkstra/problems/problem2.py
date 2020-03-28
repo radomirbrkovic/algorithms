@@ -7,6 +7,8 @@ class Graph:
         self.start = startingNode
         self.target = targetNode
         self.distances = {startingNode: 0}
+        self.path = {}
+        self.minPath = [];
 
     def addDistance(self, node, target = None, distance = 0):
         if target != None:
@@ -25,6 +27,16 @@ class Graph:
             
             if self.distances.get(key) == None or self.distances.get(key) > distance + parentDistance:
                 self.distances[key] = distance + parentDistance 
+                self.path[key] = node
+
+    def getMinPath(self, node):
+        
+
+        if self.path.get(node):
+            self.minPath.append(self.path.get(node))
+
+        if node != self.start:
+            self.getMinPath(self.path.get(node))    
 
             
     def dijkstra(self):
@@ -33,7 +45,12 @@ class Graph:
         for node in self.graph.keys():
            if self.graph[node] != None and node != self.target:
                self.minDistances(node, self.graph[node])
-               
+
+        self.minPath.append(self.target)
+        self.getMinPath(self.target)
+        self.minPath.sort()
+
+        print self.minPath
         print self.distances[self.target]
 
 
@@ -48,7 +65,7 @@ graph.addDistance('1', '3', 5)
 graph.addDistance('2', '4', 7)
 graph.addDistance('3', '5', 5)
 graph.addDistance('3', '4', 2)
-graph.addDistance('4', '5', 2)
+graph.addDistance('4', '5', 4)
 graph.addDistance('5')
 
 graph.dijkstra()
