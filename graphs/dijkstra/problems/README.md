@@ -24,3 +24,27 @@ Print the number of edges in the shortest path from 1 to n.
 
     Input: 2, 9, 4
     Output: 2, 2
+
+
+## Problem 2
+
+We have input graph with six nodes (vertices) in following order `{S, A, B, C, D, T}`, where `S` is starting node and `T` is target node. The tax is find the shortest path from starting to targeting node. 
+
+**Input**
+
+```
+graph = {
+    'S': {'A': 2, 'B': 3},
+    'A': {'B': 1, 'C': 5},
+    'B': {'D': 7},
+    'C': {'D': 2, 'T': 5},
+    'D': {'T': 2},
+    'T': {}
+}
+```
+
+**Output**
+
+```
+11
+```
