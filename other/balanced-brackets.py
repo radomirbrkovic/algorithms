@@ -18,13 +18,15 @@ def isBalanced(s):
         elif i in closeBracket:
             pos = closeBracket.index(i)
 
-            if(len(stack) > 0) and (openBracket[pos] == stack[-1]):
+            if  len(stack) > 0 and stack[-1] == openBracket[pos]:
                 stack.pop()
             else:
                 return 'NO'
 
     if len(stack) == 0:
-        return 'YES'                    
+        return 'YES'   
+    else: 
+        return 'NO'                     
 
 
 
