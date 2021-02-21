@@ -1,0 +1,3 @@
+# Merge Sort
+
+**Merge sort** algorithm was developed by John von Neumann at 1940 for sorting big data sets. Base logic in this algorithm is divided in two phases, first separating data sets in smaller units (usually is dividing on half in each iteration) and second phase is merging those units in sorted list. Running time for this algorithm is  Ο(n log n), it is one of the most respected algorithms.  
