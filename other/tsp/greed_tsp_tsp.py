@@ -5,14 +5,13 @@ import matplotlib.pyplot as plt
 from time import clock
 from collections import Counter
 
+aCity = complex
 
-alltours = permutations
 
 # Calculate total distance for salesman tour
 def distanceTour(aTour):
     return sum(distancePoints(aTour[i -1], aTour[i]) for i in range(len(aTour)))
 
-aCity = complex
 
 # Calculate absolute distance between tow cities
 def distancePoints(first, second):
@@ -24,13 +23,22 @@ def generateCities(numberOfCities):
     return frozenset(aCity(random.randint(1, width), random.randint(1, height)) 
         for c in range(numberOfCities))
 
-def bruteForce(cities):
-    "Generate all possible tours tours of the cities and choose shortest tour."
-    return shortestTour(alltours(cities))
+def greedyAlgorithm(cities, start=None):
+    C = start or first(cities)
+    tour = [C]
+    unvisited = set(cities - {C})
+    while unvisited:
+        C = nearestNeighbor(C, unvisited)
+        tour.append(C)
+        unvisited.remove(C)
 
+    return tour
 
-def shortestTour(tours): 
-    return min(tours, key=distanceTour)
+def first(collection):
+    return next(iter(collection))
+
+def nearestNeighbor(A, cities):
+    return min(cities, key=lambda C:distancePoints(C, A))           
 
 def visualizeTour(tour, style='bo-'):
     if len(tour) > 1000:
@@ -54,17 +62,16 @@ def Y(city):
     return city.imag    
 
 
-
 def run():
-    cities = generateCities(10)
+    cities = generateCities(2000)
     t0 = clock()
-    tour = bruteForce(cities)
+    tour = greedyAlgorithm(cities)
     t1 = clock()
 
     assert Counter(tour) == Counter(cities) # Every city apears exactly once in tour
 
     visualizeTour(tour)
-    print ("bruteForce: 10 cities => tour length {:.0f} (in {:.3f} sec)".format(distanceTour(tour), t1 - t0))
+    print ("greedyAlgorithm: 2000 cities => tour length {:.0f} (in {:.3f} sec)".format(distanceTour(tour), t1 - t0))
 
     plt.show()
 run()    
