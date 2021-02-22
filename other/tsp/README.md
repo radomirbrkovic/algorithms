@@ -4,5 +4,5 @@ The Travelling Salesman Problem (TSP) is the challenge of finding the shortest y
 
 For practice purpose we cover two possible solutions of this problem:
 
-- **Brutal force** (`brutal_force.py`) which calculate all possible ruts permutations and returns the shortest.
-- **Greed algorithm** (`greed.py`) which in every iteration get nearest node which is not visited and returns given root. 
+- **Brute force** (`brute_force_tsp.py`) which calculate all possible ruts permutations and returns the shortest.
+- **Greed algorithm** (`greed_tsp_tsp.py`) which in every iteration get nearest node which is not visited and returns given root. 
