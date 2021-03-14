@@ -1,0 +1,11 @@
+# A star (A *) algorithm [Source](https://en.wikipedia.org/wiki/A*_search_algorithm)
+
+**A star (A * )** is a graph traversal and path search algorithm, which is often used in many fields of computer science due to its completeness, optimality and optimal efficiency. One major practical drawback is its _O(b<sup>d</sup>)_ space complexity, as it stores all generated nodes in memory. Thus, in practical travel-routing systems, it's generally outperformed by algorithms which can pre-process the graph to attain better performance, as well as  memory-bounded approaches. However, A * is still the best choice for many cases.
+![A* algorithm](https://upload.wikimedia.org/wikipedia/commons/5/5d/Astar_progress_animation.gif "A* algorithm")
+
+
+## History 
+
+A * was created as part of the [Shakey project](https://en.wikipedia.org/wiki/Shakey_the_robot), which had the aim of building a mobile robot the could  plain ist own cations. Nils Nilsson originally proposed using the Graph Traverser algorithm for Shakey's path planning. Graph Traverser is guided by a heuristic function h(n), the estimated distance from node n to the goal node: it entirely ignores _g(n)_, the distance from the start node to _n_. Bertram Raphael suggested using the sum, _g(n) + h(n)_.  Peter Hart invented the concepts we now call [admissibility](https://en.wikipedia.org/wiki/Admissible_heuristic) and [consistency](https://en.wikipedia.org/wiki/Consistent_heuristic) of heuristic functions. A* was originally designed for finding least-cost paths when the cost of a path is the sum of its costs, but it has been shown that A* can be used to find optimal paths for any problem satisfying the conditions of a cost algebra. 
+
+The original 1968 A* paper[4] contained a theorem stating that no A*-like algorithm could expand fewer nodes than A* if the heuristic function is consistent and A*’s tie-breaking rule is suitably chosen. A ″correction″ was published a few years later claiming that consistency was not required, but this was shown to be false in Dechter and Pearl's definitive study of A*'s optimality (now called optimal efficiency), which gave an example of A* with a heuristic that was admissible but not consistent expanding arbitrarily more nodes than an alternative A*-like algorithm
