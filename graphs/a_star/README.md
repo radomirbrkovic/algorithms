@@ -1,6 +1,7 @@
 # A star (A *) algorithm [Source](https://en.wikipedia.org/wiki/A*_search_algorithm)
 
 **A star (A * )** is a graph traversal and path search algorithm, which is often used in many fields of computer science due to its completeness, optimality and optimal efficiency. One major practical drawback is its _O(b<sup>d</sup>)_ space complexity, as it stores all generated nodes in memory. Thus, in practical travel-routing systems, it's generally outperformed by algorithms which can pre-process the graph to attain better performance, as well as  memory-bounded approaches. However, A * is still the best choice for many cases.
+
 ![A* algorithm](https://upload.wikimedia.org/wikipedia/commons/5/5d/Astar_progress_animation.gif "A* algorithm")
 
 
