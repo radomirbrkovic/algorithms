@@ -6,7 +6,7 @@ def binarySearch(array, item):
     while first <= last and not result:
         midpoint = (first + last) // 2
         if array[midpoint] == item:
-            result = True
+            return True
         else:
             if item < array[midpoint]:
                 last = midpoint - 1
