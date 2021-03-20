@@ -15,7 +15,7 @@ def insertionSortRecursive(arr,n):
       # of their current position  
     while (j>=0 and arr[j]>last): 
         arr[j+1] = arr[j] 
-        j = j-1
+        j -= 1
   
     arr[j+1]=last 
 
