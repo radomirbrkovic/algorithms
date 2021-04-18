@@ -13,8 +13,8 @@ def calcFibonacci(memorize, n):
     if memorize[n] >= 0:
         return memorize[n]
 
-    memorize[n] = calcFibonacci(memorize, n-1) + calcFibonacci(memorize, n-1)
-    
+    memorize[n] = calcFibonacci(memorize, n-1) + calcFibonacci(memorize, n-2)
+
     return memorize[n]    
 
 
